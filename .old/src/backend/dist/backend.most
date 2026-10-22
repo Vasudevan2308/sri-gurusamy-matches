@@ -1,0 +1,22 @@
+// Version: 1.0.0
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type ProductCategory__978907055 =
+  {#dipped_splints; #safety_matches; #wax_matches};
+type Product__750902660 =
+  {
+    category : ProductCategory__978907055;
+    description : Text;
+    id : Nat;
+    name : Text;
+    specs : [Spec__375543251]
+  };
+type Spec__375543251 = {key : Text; value : Text};
+actor {
+  stable products :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Product__750902660]];
+      var elementIndex : Nat__490723111
+    }
+};

@@ -1,0 +1,34 @@
+type Spec = 
+ record {
+   key: text;
+   value: text;
+ };
+type ProductCategory = 
+ variant {
+   dipped_splints;
+   safety_matches;
+   wax_matches;
+ };
+type Product = 
+ record {
+   category: ProductCategory;
+   description: text;
+   id: nat;
+   name: text;
+   specs: vec Spec;
+ };
+type CompanyInfo = 
+ record {
+   address: text;
+   description: text;
+   email: text;
+   foundingYear: nat;
+   name: text;
+   phones: vec text;
+   tagline: text;
+ };
+service : {
+  getCompanyInfo: () -> (CompanyInfo) query;
+  getProduct: (id: nat) -> (opt Product) query;
+  getProducts: () -> (vec Product) query;
+}
